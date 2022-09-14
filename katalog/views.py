@@ -1,15 +1,25 @@
+from dataclasses import field
+import os
 from django.shortcuts import render
 from katalog.models import CatalogItem
+import json
 
 name = "Bimo Priyohutomo"
 student_id = "2106708444"
-item = CatalogItem(item_name="komputer", item_price=10000000, item_stock=4, description="komputer keren", rating=7, item_url="https://www.tokopedia.com/")
+item = []
+
+f = open('katalog/fixtures/initial_catalog_data.json', 'r')
+
+item_data = json.loads(f.read())
+
+for i in item_data:
+    item.append(CatalogItem(item_name=i['fields']['item_name'], item_price=i['fields']['item_price'], item_stock=i['fields']['item_stock'], description=i['fields']['description'], rating=i['fields']['rating'], item_url=i['fields']['item_url']))
 
 # TODO: Create your views here. 
 def index(request):
     response = {
         'name': name,
         'id': student_id,
-        'item' : [item],
+        'item' : item,
     }
     return render(request, 'katalog.html', response)
