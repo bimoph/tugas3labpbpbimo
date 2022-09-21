@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 1,
+        "fields": {
+            "watched": "Sudah",
+            "title": "Parasite",
+            "rating": 5,
+            "release_date": "4 Juli 2003",
+            "review": "keren sekali filmnya"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 2,
+        "fields": {
+            "watched": "Sudah",
+            "title": "Bubur Naik Haji",
+            "rating": 1,
+            "release_date": "1 Mei 2011",
+            "review": "sangat menginspirasi"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 3,
+        "fields": {
+            "watched": "Belum",
+            "title": "Titanic",
+            "rating": 4,
+            "release_date": "1 Agustus 1989",
+            "review": "banyak scene epic"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 4,
+        "fields": {
+            "watched": "Belum",
+            "title": "Danur",
+            "rating": 1,
+            "release_date": "9 Januari 1889",
+            "review": "ga serem, b aja"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 5,
+        "fields": {
+            "watched": "Belum",
+            "title": "Azab",
+            "rating": 5,
+            "release_date": "29 Agustus 2000",
+            "review": "sedih sekali dan banyak hikmahnya"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 6,
+        "fields": {
+            "watched": "Belum",
+            "title": "2012",
+            "rating": 3,
+            "release_date": "1 Agustus 2011",
+            "review": "jadi ingat kiamat"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 7,
+        "fields": {
+            "watched": "Sudah",
+            "title": "Ivanna",
+            "rating": 2,
+            "release_date": "1 April 1900",
+            "review": "banyak gore dan ada cewe belanda"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 8,
+        "fields": {
+            "watched": "Belum",
+            "title": "Naruto",
+            "rating": 4,
+            "release_date": "11 Juni 2021",
+            "review": "keren, menginspirasi dan seru"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 9,
+        "fields": {
+            "watched": "Sudah",
+            "title": "Warkop DKI",
+            "rating": 4,
+            "release_date": "7 Agustus 2016",
+            "review": "lucu banget sampe keluar air mata dikit"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 10,
+        "fields": {
+            "watched": "Belum",
+            "title": "Minion",
+            "rating": 5,
+            "release_date": "14 April 2020",
+            "review": "film bayi, cocom buat bayi ketawa"
+        }
+    }
+]
