@@ -18,3 +18,4 @@
  5. membuat routing di urls.py app
  6. melakukan deploy di heroku (new app)
 
+SS postman: https://drive.google.com/drive/folders/1d7e8BsLy_d8XsDrgMi26nZEKHhlkq_wi?usp=sharing
