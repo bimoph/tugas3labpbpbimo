@@ -1,21 +1,14 @@
- Jelaskan perbedaan antara JSON, XML, dan HTML!
+-  Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
+Middleware CSRF dan tag template memberikan perlindungan yang mudah digunakan terhadap Pemalsuan Permintaan Lintas Situs. Jenis serangan ini terjadi ketika situs web berbahaya berisi tautan, tombol formulir, atau beberapa JavaScript yang dimaksudkan untuk melakukan beberapa tindakan di situs web Anda, menggunakan kredensial pengguna yang masuk yang mengunjungi situs jahat di browser mereka. Jenis serangan terkait, 'login CSRF', di mana situs penyerang menipu browser pengguna untuk masuk ke situs dengan kredensial orang lain, juga tercakup.
 
- -> JSON (JavaScript Object Notation) adalah format pertukaran data yang ringan dan sepenuhnya tidak bergantung pada bahasa. JSON didasarkan pada bahasa pemrograman JavaScript.
- -> XML (Extensible markup language) dirancang untuk membawa data, bukan untuk menampilkan data. Extensible Markup Language (XML) adalah bahasa markup yang mendefinisikan seperangkat aturan untuk menyandikan dokumen dalam format yang dapat dibaca manusia dan dapat dibaca mesin. Tujuan desain XML fokus pada kesederhanaan, umum, dan kegunaan di Internet. XML adalah format data tekstual dengan dukungan kuat melalui Unicode untuk bahasa manusia yang berbeda. Meskipun desain XML berfokus pada dokumen, XML banyak digunakan untuk representasi struktur data arbitrer seperti yang digunakan dalam layanan web.
- -> HTML adalah bahasa hypertext markup. HTML digunakan untuk menampilkan isi di computer user/client (browser). Tidak seperti JSON dan XML, HTML bukan digunakan untuk transfer data mentah. HTML digunakan untuk menampilkan data yang dapat langsung diterima oleh user.
 
- Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+-  Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Jelaskan secara gambaran besar bagaimana cara membuat <form> secara manual.
+Bisa, gambarannya menggunakan html, form dari html tersebut di assign/dimasukkan ke model.
 
--> Karena sebuah platform digunakan untuk memberikan 
 
- Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+-  Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
+Data di input oleh user dari form. lalu data tersebut diproses oleh fungsi di views untuk di masukkan ke dalam model. lalu data dari user dalam bentuk model masuk ke database. untuk menampilkan, views meminta data dari database dalam bentuk model lalu memberinya ke templat html.
 
- -> 
- 1. membuat app dengan startapp mywatchlist.
- 2. menambahkan path di urls.py proyek
- 3. membuat models di models.py mywatchlist
- 4. menyajikan xml, json, dan html dengan membuat fungsi di views.py mywatchlist
- 5. membuat routing di urls.py app
- 6. melakukan deploy di heroku (new app)
 
-SS postman: https://drive.google.com/drive/folders/1d7e8BsLy_d8XsDrgMi26nZEKHhlkq_wi?usp=sharing
+-  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+membuat app, membuat model sesuai ketentuan, mengimplementasikan login management menggunakan package/library yang sudah digunakan oleh django. membuat halaman menggunakan html dan membuat forms untuk model Task menggunakan generator django. halaman-halaman tersebut diberi url dan fungsi views.
