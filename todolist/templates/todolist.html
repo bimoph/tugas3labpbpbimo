@@ -6,23 +6,21 @@
 <h5>Username: </h5>
 <p>{{user}}</p>
 
-<table class="table table-hover">
-    <thead class="thead-dark">
-        <tr class="table-info">
-            <th>Date</th>
-            <th>Title</th>
-            <th>Deskripsi</th>
-        </tr>
-    </thead>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-    {% for task in list_task %}
-        <tr>
-            <th>{{task.date}}</th>
-            <th>{{task.title}}</th>
-            <th>{{task.deskripsi}}</th>
-        </tr>
-    {% endfor %}
-</table>
+
+<div class="row">
+{% for task in list_task %}
+<div class="col-2">
+    <div class="card text-white bg-info mb-3" >
+        <div class="card-header">{{task.date}}</div>
+        <div class="card-body">
+            <h5 class="card-title">{{task.title}}</h5>
+            <p class="card-text">{{task.deskripsi}}</p>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+</div>
 
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 <a href="{% url 'todolist:create_task' %}"><button class="btn btn-primary">Tambah Task Baru</button></a>
