@@ -6,11 +6,19 @@
 <h5>Username: </h5>
 <p>{{user}}</p>
 
+<form id="form" onsubmit="return false;">
+    {% csrf_token %}
+    <label>Title</label>
+    <input type="text" name="title"></input>
+    <label>Description</label>
+    <input type="text" name="description"></input>
+    <button id="button" type="submit"  value="Submit">Add Task</button>
+</form>
 
-<div class="row">
-{% for task in list_task %}
+<div class="row" id="card-row">
+{% comment %} {% for task in list_task %}
 <div class="col-2">
-    <div class="card text-white bg-info mb-3" >
+    <div class="card text-white bg-info mb-3" id="card-task">
         <div class="card-header">{{task.date}}</div>
         <div class="card-body">
             <h5 class="card-title">{{task.title}}</h5>
@@ -19,11 +27,54 @@
     </div>
 </div>
 
-{% endfor %}
+{% endfor %} {% endcomment %}
 </div>
 
 <h5>Sesi terakhir login: {{ last_login }}</h5>
-<a href="{% url 'todolist:create_task' %}"><button class="btn btn-primary">Tambah Task Baru</button></a>
+{% comment %} <a href="{% url 'todolist:create_task' %}"><button class="btn btn-primary">Tambah Task Baru</button></a> {% endcomment %}
 <a href="{% url 'todolist:logout' %}"><button class="btn btn-secondary">Logout</button></a>
+
+<script>
+    async function getTodolist() {
+        console.log("function getTodolist passed")
+        return fetch("{% url 'todolist:show_json' %}").then((res) => res.json())
+    }
+
+  async function refreshTodolist() {
+    console.log("function refreshTodolist passed")
+        document.getElementById("card-row").innerHTML = ""
+        const wishlist = await getTodolist()
+        console.log("function refreshTodolist passed2")
+        let htmlString = ``
+        wishlist.forEach((item) => {
+          htmlString += `\n<div class="col-2">
+            <div class="card text-white bg-info mb-3" id="card-task">
+                <div class="card-header">${item.fields.date}</div>
+                <div class="card-body">
+                    <h5 class="card-title">${item.fields.title}</h5>
+                    <p class="card-text">${item.fields.deskripsi}</p>
+                </div>
+            </div>
+        </div>` 
+        })
+        console.log("function refreshTodolist passed3")
+        document.getElementById("card-row").innerHTML = htmlString
+        console.log(htmlString)
+  }
+
+  function addTodolist() {
+    fetch("{% url 'todolist:add_todolist_item' %}", {
+          method: "POST",
+          body: new FormData(document.querySelector('#form'))
+      }).then(refreshTodolist)
+      console.log(new FormData(document.querySelector('#form')))
+    console.log("function addtodolist passed")
+    return false
+  }
+
+  document.getElementById("button").onclick = addTodolist
+  refreshTodolist()
+</script>
+
 
 {% endblock content %}
