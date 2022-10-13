@@ -6,14 +6,39 @@
 <h5>Username: </h5>
 <p>{{user}}</p>
 
-<form id="form" onsubmit="return false;">
-    {% csrf_token %}
-    <label>Title</label>
-    <input type="text" name="title"></input>
-    <label>Description</label>
-    <input type="text" name="description"></input>
-    <button id="button" type="submit"  value="Submit">Add Task</button>
-</form>
+
+
+<button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add task</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white" >
+  
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">New Task</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+    
+            <div class="modal-body">
+                <form style="text-align:center" id="form" onsubmit="return false;">
+                    <div class="form-group">
+                        {% csrf_token %}  
+                        <div class="mb-md-1 mt-md-1 pb-1"></div>
+                        <h3 class="fw-bold mb-2 text-uppercase">Create Task</h3>
+                        <div><label>Title</label></div>
+                        <div><input type="text" name="title" required></input></div>
+                        <div><label>Description</label></div>
+                        <div><input type="text" name="description" required></input></div>            
+                        <tr >  
+                            <p></p>
+                            <td><button class="btn btn-outline-light btn-lg px-5" id="button" type="submit"  value="Submit">Add Task</button></td>  
+                        </tr>                            
+                    </div>
+                </form>
+            </div>
+  
+        </div>
+    </div>
+</div>
 
 <div class="row" id="card-row">
 {% comment %} {% for task in list_task %}
