@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<nav class="navbar" style="background-color: #212529;">
+    <div class="container-fluid">
+        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add task</button>
+    </div>
+</nav>
+
+
 <h1 class="text-center">To Do List</h1>
 
 <h5>Username: </h5>
@@ -8,7 +15,7 @@
 
 
 
-<button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add task</button>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content bg-dark text-white" >
