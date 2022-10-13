@@ -1,5 +1,4 @@
-from multiprocessing import context
-from turtle import title
+
 from django.shortcuts import render
 from todolist.models import Task
 from django.http import HttpResponse, JsonResponse, HttpResponseNotFound
